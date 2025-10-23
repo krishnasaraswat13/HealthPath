@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272 64" fill="none">
+  <rect x="4" y="6" width="52" height="52" rx="14" fill="url(#tile)" />
+  <path d="M14 38C19 34 24 32 30 32C36 32 41 34 46 38" stroke="#E6FFFA" stroke-width="3.2" stroke-linecap="round" />
+  <path d="M18 30H25L28 24L32 40L36 30H43" stroke="#CFFAFE" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="68" y="17" width="90" height="14" rx="7" fill="#67E8F9" fill-opacity="0.18" />
+  <text x="70" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="800" fill="#D1FAE5">Health</text>
+  <text x="165" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="800" fill="#67E8F9">Path</text>
+  <text x="70" y="48" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="700" fill="#94A3B8" letter-spacing="1.8">CONNECTED CARE WORKFLOWS</text>
+  <defs>
+    <linearGradient id="tile" x1="4" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0891B2" />
+      <stop offset="1" stop-color="#10B981" />
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,50 @@
+﻿{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "description": "HealthPath Healthcare Backend API",
+  "author": "HealthPath Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "npm cache clean --force && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "healthcare",
+    "doctor",
+    "patient",
+    "api",
+    "rest"
+  ],
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@stream-io/node-sdk": "^0.7.40",
+    "axios": "^1.7.7",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.19.2",
+    "groq-sdk": "^0.37.0",
+    "iconv-lite": "^0.7.2",
+    "joi": "^18.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.21.0",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.8.1",
+    "stream-chat": "^9.31.0",
+    "uuid": "9.0.1"
+  },
+  "overrides": {
+    "uuid": "9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
+

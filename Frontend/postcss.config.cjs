@@ -1,0 +1,8 @@
+﻿// HealthPath/frontend/postcss.config.cjs
+module.exports = {
+  plugins: {
+    // ðŸ›‘ We are now using the correct package for PostCSS integration
+    '@tailwindcss/postcss': {}, 
+    autoprefixer: {},
+  },
+}

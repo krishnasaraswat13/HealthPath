@@ -1,0 +1,194 @@
+/**
+ * Stream.io Video Call Custom Styles
+ * Fixes dark theme text visibility issues
+ */
+
+/* Menu dropdown text fixes */
+.str-video__menu-container,
+.str-video__generic-menu,
+.str-video__participant-actions__dropdown,
+.str-video__dropdown-menu {
+    background-color: #1f2937 !important;
+    border: 1px solid #374151 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+.str-video__menu-container button,
+.str-video__generic-menu button,
+.str-video__generic-menu__item,
+.str-video__participant-actions__dropdown button,
+.str-video__dropdown-menu button,
+.str-video__dropdown-menu__item {
+    color: #f3f4f6 !important;
+    background-color: transparent !important;
+    padding: 10px 16px !important;
+    font-size: 14px !important;
+}
+
+.str-video__menu-container button:hover,
+.str-video__generic-menu button:hover,
+.str-video__generic-menu__item:hover,
+.str-video__participant-actions__dropdown button:hover,
+.str-video__dropdown-menu button:hover,
+.str-video__dropdown-menu__item:hover {
+    background-color: #374151 !important;
+    color: #ffffff !important;
+}
+
+/* Menu icons */
+.str-video__menu-container svg,
+.str-video__generic-menu svg,
+.str-video__dropdown-menu svg {
+    color: #9ca3af !important;
+}
+
+.str-video__menu-container button:hover svg,
+.str-video__generic-menu button:hover svg,
+.str-video__dropdown-menu button:hover svg {
+    color: #ffffff !important;
+}
+
+/* Participant view overlay text */
+.str-video__participant-view__name,
+.str-video__participant-details__name {
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 600 !important;
+}
+
+/* Call controls container */
+.str-video__call-controls {
+    background-color: rgba(17, 24, 39, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    padding: 8px 16px !important;
+}
+
+/* Control buttons */
+.str-video__call-controls__button {
+    background-color: #374151 !important;
+    border-radius: 12px !important;
+    transition: all 0.2s ease !important;
+}
+
+.str-video__call-controls__button:hover {
+    background-color: #4b5563 !important;
+    transform: scale(1.05) !important;
+}
+
+.str-video__call-controls__button--active {
+    background-color: #ef4444 !important;
+}
+
+.str-video__call-controls__button--active:hover {
+    background-color: #dc2626 !important;
+}
+
+/* End call button */
+.str-video__end-call-button {
+    background-color: #ef4444 !important;
+    border-radius: 12px !important;
+}
+
+.str-video__end-call-button:hover {
+    background-color: #dc2626 !important;
+}
+
+/* Speaker layout improvements */
+.str-video__speaker-layout {
+    background-color: #111827 !important;
+}
+
+.str-video__speaker-layout__spotlight {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+}
+
+.str-video__speaker-layout__participants-bar {
+    background-color: rgba(17, 24, 39, 0.8) !important;
+    padding: 8px !important;
+    gap: 8px !important;
+}
+
+/* Participant tiles in bar */
+.str-video__participant-view {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    border: 2px solid transparent !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.str-video__participant-view:hover {
+    border-color: #6366f1 !important;
+}
+
+.str-video__participant-view--speaking {
+    border-color: #22c55e !important;
+}
+
+/* Video placeholder */
+.str-video__video-placeholder {
+    background-color: #1f2937 !important;
+}
+
+/* Audio/Video indicators */
+.str-video__participant-view__muted-indicator {
+    background-color: rgba(239, 68, 68, 0.9) !important;
+    border-radius: 6px !important;
+}
+
+/* Connection quality indicator */
+.str-video__connection-quality-indicator {
+    background-color: rgba(17, 24, 39, 0.8) !important;
+    border-radius: 6px !important;
+    padding: 4px !important;
+}
+
+/* Tooltip styles */
+.str-video__tooltip {
+    background-color: #1f2937 !important;
+    color: #f3f4f6 !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Screen share button */
+.str-video__screen-share-button {
+    background-color: #374151 !important;
+}
+
+.str-video__screen-share-button--active {
+    background-color: #6366f1 !important;
+}
+
+/* Reactions */
+.str-video__reaction-button {
+    background-color: #374151 !important;
+}
+
+/* Loading states */
+.str-video__loading-indicator {
+    color: #6366f1 !important;
+}
+
+/* Scrollbar styling for participant list */
+.str-video__speaker-layout__participants-bar::-webkit-scrollbar {
+    height: 6px !important;
+}
+
+.str-video__speaker-layout__participants-bar::-webkit-scrollbar-track {
+    background: #1f2937 !important;
+    border-radius: 3px !important;
+}
+
+.str-video__speaker-layout__participants-bar::-webkit-scrollbar-thumb {
+    background: #4b5563 !important;
+    border-radius: 3px !important;
+}
+
+.str-video__speaker-layout__participants-bar::-webkit-scrollbar-thumb:hover {
+    background: #6b7280 !important;
+}

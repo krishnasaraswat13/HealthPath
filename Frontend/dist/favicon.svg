@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#bg)"/>
+  <!-- Bridge arch -->
+  <path d="M14 42 Q32 14 50 42" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <!-- Medical cross on bridge -->
+  <rect x="27" y="22" width="10" height="3" rx="1.5" fill="white"/>
+  <rect x="30.5" y="18.5" width="3" height="10" rx="1.5" fill="white"/>
+  <!-- Bridge deck -->
+  <rect x="14" y="40" width="36" height="3" rx="1.5" fill="white" opacity="0.9"/>
+  <!-- Bridge pillars -->
+  <rect x="17" y="39" width="3" height="8" rx="1" fill="white" opacity="0.8"/>
+  <rect x="44" y="39" width="3" height="8" rx="1" fill="white" opacity="0.8"/>
+  <!-- Heartbeat line -->
+  <polyline points="8,36 13,36 16,28 20,44 24,36 28,36" stroke="#fbbf24" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+</svg>

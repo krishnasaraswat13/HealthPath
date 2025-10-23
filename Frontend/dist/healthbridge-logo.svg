@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" fill="none">
+  <!-- Bridge arch -->
+  <path d="M20 45 Q50 10 80 45" stroke="url(#grad1)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- Heart/Plus cross on bridge -->
+  <rect x="43" y="18" width="14" height="4" rx="2" fill="url(#grad1)"/>
+  <rect x="48" y="13" width="4" height="14" rx="2" fill="url(#grad1)"/>
+  <!-- Bridge pillars -->
+  <rect x="24" y="40" width="4" height="10" rx="1" fill="#6366f1"/>
+  <rect x="72" y="40" width="4" height="10" rx="1" fill="#8b5cf6"/>
+  <!-- Bridge deck -->
+  <rect x="20" y="44" width="60" height="3" rx="1.5" fill="url(#grad1)"/>
+  <!-- Heartbeat line -->
+  <polyline points="12,38 18,38 22,30 26,46 30,38 36,38" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Text -->
+  <text x="95" y="28" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22" font-weight="800" fill="#1e1b4b">Health</text>
+  <text x="170" y="28" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22" font-weight="800" fill="url(#grad1)">Bridge</text>
+  <text x="95" y="46" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="10" font-weight="500" fill="#6b7280" letter-spacing="2">YOUR HEALTH PARTNER</text>
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+</svg>
