@@ -266,11 +266,20 @@ const HomePage = () => {
                   { time: '09:30', task: 'Cardiology consult confirmed', tag: 'Consult' },
                   { time: '11:00', task: 'Prescription sent to pharmacy', tag: 'Rx' },
                   { time: '13:15', task: 'Follow-up reminders scheduled', tag: 'Follow-up' },
-                ].map((row) => (
-                  <div key={row.time} className="flex items-center gap-3 rounded-xl border border-slate-600/70 bg-gradient-to-r from-slate-800 to-slate-700 px-4 py-3 shadow-[0_8px_20px_rgba(15,23,42,0.25)]">
-                    <span className="w-14 text-xs font-bold text-sky-300">{row.time}</span>
-                    <span className="flex-1 text-sm font-semibold text-slate-100">{row.task}</span>
-                    <span className="rounded-md bg-slate-900/90 px-2 py-1 text-xs font-semibold text-slate-200 border border-slate-600">
+                ].map((row, idx) => (
+                  <div
+                    key={row.time}
+                    className={`flex items-center gap-3 rounded-xl px-4 py-3 shadow-[0_8px_20px_rgba(14,116,144,0.12)] ${
+                      idx === 0
+                        ? 'border border-sky-200 bg-gradient-to-r from-sky-50 to-cyan-50'
+                        : idx === 1
+                        ? 'border border-teal-200 bg-gradient-to-r from-teal-50 to-emerald-50'
+                        : 'border border-indigo-200 bg-gradient-to-r from-indigo-50 to-violet-50'
+                    }`}
+                  >
+                    <span className="w-14 text-xs font-bold text-slate-700">{row.time}</span>
+                    <span className="flex-1 text-sm font-semibold text-slate-700">{row.task}</span>
+                    <span className="rounded-md border border-white/80 bg-white/90 px-2 py-1 text-xs font-semibold text-slate-600">
                       {row.tag}
                     </span>
                   </div>
@@ -304,7 +313,7 @@ const HomePage = () => {
               { label: 'Support Window', value: '24/7', icon: Clock3 },
             ].map((item) => (
               <article key={item.label} className="rounded-2xl border border-slate-200/80 bg-white/80 p-4 shadow-[0_12px_30px_rgba(15,23,42,0.08)] backdrop-blur-xl">
-                <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-sky-300">
+                <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-cyan-500 text-white">
                   <item.icon className="h-5 w-5" />
                 </div>
                 <p className="text-2xl font-black text-slate-900">{item.value}</p>
@@ -336,7 +345,7 @@ const HomePage = () => {
           <div className="grid gap-5 md:grid-cols-2">
             {modules.map((item) => (
               <article key={item.title} className="rounded-2xl border border-slate-200/80 bg-white/85 p-6 shadow-[0_14px_30px_rgba(2,132,199,0.08)] backdrop-blur-xl">
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 text-sky-300">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-sky-500 text-white">
                   <item.icon className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-black text-slate-900">{item.title}</h3>
@@ -416,7 +425,7 @@ const HomePage = () => {
 
       <section className="pb-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-9 text-white shadow-[0_24px_45px_rgba(15,23,42,0.28)]">
+          <div className="rounded-3xl bg-gradient-to-r from-sky-900 via-indigo-900 to-cyan-900 p-9 text-white shadow-[0_24px_45px_rgba(8,47,73,0.28)]">
             <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <h2 className="text-3xl font-black sm:text-4xl">Ready to use HealthPath?</h2>

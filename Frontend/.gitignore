@@ -1,4 +1,6 @@
 # Logs
+
+
 logs
 *.log
 npm-debug.log*
@@ -11,6 +13,9 @@ node_modules
 package-lock.json
 *.local
 
+.env
+
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -21,5 +26,5 @@ package-lock.json
 *.njsproj
 *.sln
 *.sw?
-.env
+
 
