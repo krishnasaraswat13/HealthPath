@@ -16,3 +16,6 @@ QUICK_REFERENCE.md
 
 DOCTOR_FEATURES.md
 
+node_modules
+package-lock.json
+
