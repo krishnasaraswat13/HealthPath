@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 // FIX 1: Use 127.0.0.1 instead of localhost to prevent IPv6 connection errors
-const ML_SERVICE_URL = process.env.ML_SERVICE_URL || 'http://127.0.0.1:5001';
+const ML_SERVICE_URL = process.env.ML_SERVICE_URL || 'https://healthpath-1.onrender.com';
 
 /**
  * Analyze patient report using ML model
