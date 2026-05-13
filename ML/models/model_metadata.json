@@ -1,0 +1,70 @@
+{
+  "model_type": "XGBClassifier (inside sklearn Pipeline)",
+  "version": "2.0.0",
+  "trained_at": "2026-04-25T23:25:18.606965",
+  "dataset": "New_dataset.csv",
+  "n_samples_train": 24000,
+  "n_samples_test": 6000,
+  "n_classes": 8,
+  "classes": [
+    "Cardio-Diabetic Condition",
+    "Cardiovascular Disease",
+    "Diabetes",
+    "Healthy",
+    "Multiple Conditions",
+    "Obesity",
+    "Respiratory Disease",
+    "Viral Infection"
+  ],
+  "feature_columns": [
+    "Age",
+    "Gender",
+    "BloodPressure",
+    "Cholesterol",
+    "Glucose",
+    "HeartRate",
+    "BMI",
+    "Fever",
+    "Cough",
+    "Fatigue",
+    "Headache",
+    "Nausea",
+    "ShortnessBreath"
+  ],
+  "test_metrics": {
+    "accuracy": 0.9998,
+    "precision": 0.9998,
+    "recall": 0.9998,
+    "f1_score": 0.9998
+  },
+  "best_cv_f1": 1.0,
+  "best_params": {
+    "classifier__subsample": 0.7,
+    "classifier__reg_lambda": 5.0,
+    "classifier__reg_alpha": 1.0,
+    "classifier__n_estimators": 300,
+    "classifier__min_child_weight": 5,
+    "classifier__max_depth": 6,
+    "classifier__learning_rate": 0.05,
+    "classifier__gamma": 0.1,
+    "classifier__colsample_bytree": 0.8
+  },
+  "feature_importance": {
+    "Glucose": 0.316118,
+    "BloodPressure": 0.163744,
+    "Cholesterol": 0.128039,
+    "BMI": 0.117894,
+    "BMI_Cholesterol_Interaction": 0.047909,
+    "Cough": 0.043718,
+    "Fatigue": 0.042083,
+    "Fever": 0.040959,
+    "ShortnessBreath": 0.034073,
+    "Age_BP_Interaction": 0.031487,
+    "Age": 0.023755,
+    "HeartRate": 0.002616,
+    "Nausea": 0.002437,
+    "Headache": 0.002289,
+    "Gender_Male": 0.002094,
+    "Gender_Female": 0.000786
+  }
+}

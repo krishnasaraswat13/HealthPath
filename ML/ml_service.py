@@ -45,13 +45,27 @@ pipeline = None
 label_encoder = None
 metadata = {}
 
+
+def _artefact_paths() -> dict:
+    return {
+        "pipeline": os.path.join(MODEL_DIR, "healthpath_pipeline_v2.joblib"),
+        "label_encoder": os.path.join(MODEL_DIR, "label_encoder_v2.joblib"),
+        "metadata": os.path.join(MODEL_DIR, "model_metadata.json"),
+    }
+
+
+def _artefact_status() -> dict:
+    paths = _artefact_paths()
+    return {name: os.path.exists(path) for name, path in paths.items()}
+
 def _load_artefacts():
     """Load pipeline, label encoder, and metadata from disk."""
     global pipeline, label_encoder, metadata
 
-    pipeline_path  = os.path.join(MODEL_DIR, "healthpath_pipeline_v2.joblib")
-    label_enc_path = os.path.join(MODEL_DIR, "label_encoder_v2.joblib")
-    metadata_path  = os.path.join(MODEL_DIR, "model_metadata.json")
+    paths = _artefact_paths()
+    pipeline_path = paths["pipeline"]
+    label_enc_path = paths["label_encoder"]
+    metadata_path = paths["metadata"]
 
     if not os.path.exists(pipeline_path):
         raise FileNotFoundError(
@@ -143,6 +157,7 @@ def _predict_single(data: dict) -> dict:
 @app.route("/", methods=["GET"])
 def root():
     """Service info."""
+    artefacts = _artefact_status()
     return jsonify({
         "service": "HealthPath ML Service",
         "version": "2.0.0",
@@ -154,22 +169,35 @@ def root():
             "model_info":   "/model/info (GET)",
         },
         "model_loaded": pipeline is not None,
+        "model_dir": MODEL_DIR,
+        "artefacts": artefacts,
     })
 
 
 @app.route("/health", methods=["GET"])
 def health():
     """Health check."""
-    return jsonify({"status": "healthy", "model_loaded": pipeline is not None})
+    artefacts = _artefact_status()
+    missing = [name for name, exists in artefacts.items() if not exists]
+    return jsonify({
+        "status": "healthy",
+        "model_loaded": pipeline is not None,
+        "model_dir": MODEL_DIR,
+        "artefacts": artefacts,
+        "missing_artefacts": missing
+    })
 
 
 @app.route("/predict", methods=["POST"])
 def predict():
     """Predict disease for a single patient report (raw JSON in, result out)."""
     if pipeline is None:
+        missing = [name for name, exists in _artefact_status().items() if not exists]
         return jsonify({
             "status": "error",
-            "message": "Model not loaded. Run train_model_v2.py first.",
+            "message": "Model not loaded. Ensure trained model artifacts are deployed.",
+            "missing_artefacts": missing,
+            "model_dir": MODEL_DIR
         }), 500
 
     data = request.get_json(silent=True)
@@ -188,9 +216,12 @@ def predict():
 def predict_batch():
     """Batch prediction for multiple patient reports."""
     if pipeline is None:
+        missing = [name for name, exists in _artefact_status().items() if not exists]
         return jsonify({
             "status": "error",
-            "message": "Model not loaded. Run train_model_v2.py first.",
+            "message": "Model not loaded. Ensure trained model artifacts are deployed.",
+            "missing_artefacts": missing,
+            "model_dir": MODEL_DIR
         }), 500
 
     payload = request.get_json(silent=True)
@@ -209,7 +240,13 @@ def predict_batch():
 def model_info():
     """Return model metadata and feature importance."""
     if pipeline is None:
-        return jsonify({"status": "error", "message": "Model not loaded"}), 500
+        missing = [name for name, exists in _artefact_status().items() if not exists]
+        return jsonify({
+            "status": "error",
+            "message": "Model not loaded",
+            "missing_artefacts": missing,
+            "model_dir": MODEL_DIR
+        }), 500
 
     feature_importance = metadata.get("feature_importance", {})
     return jsonify({

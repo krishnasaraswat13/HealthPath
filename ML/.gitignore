@@ -1,9 +1,11 @@
 # Model files
-models/
-*.joblib
-*.pkl
-*.h5
-*.pb
+# Keep trained artifacts in version control for deployment.
+# Uncomment these if you move artifacts to external object storage.
+# models/
+# *.joblib
+# *.pkl
+# *.h5
+# *.pb
 
 # Python
 __pycache__/
@@ -42,5 +44,4 @@ wheels/
 .idea/
 *.swp
 *.swo
-
 
