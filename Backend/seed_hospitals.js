@@ -181,11 +181,11 @@ const hospitals = [
 async function seedHospitals() {
     try {
         await mongoose.connect(process.env.MONGO_URI);
-        console.log('âœ… MongoDB Connected');
+        console.log(' MongoDB Connected');
 
         // Check existing hospitals
         const existingCount = await HospitalAccount.countDocuments();
-        console.log(`ðŸ“Š Existing hospitals in DB: ${existingCount}`);
+        console.log(` Existing hospitals in DB: ${existingCount}`);
 
         let seeded = 0;
         let skipped = 0;
@@ -194,7 +194,7 @@ async function seedHospitals() {
             // Check if hospital already exists by email
             const exists = await HospitalAccount.findOne({ email: hospitalData.email });
             if (exists) {
-                console.log(`â­ï¸  Skipped (already exists): ${hospitalData.name}`);
+                console.log(` Skipped (already exists): ${hospitalData.name}`);
                 skipped++;
                 continue;
             }
@@ -209,7 +209,7 @@ async function seedHospitals() {
             });
 
             await hospital.save();
-            console.log(`âœ… Seeded: ${hospitalData.name}`);
+            console.log(` MongoDB Connected`);
             seeded++;
         }
 

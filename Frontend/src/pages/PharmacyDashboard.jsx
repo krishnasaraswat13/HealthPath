@@ -463,7 +463,7 @@ const PharmacyDashboard = () => {
                                     </span>
                                 </div>
                                 <p className="text-gray-500 text-sm">Total Revenue</p>
-                                <p className="text-3xl font-bold text-gray-900">â‚¹{analytics.totalRevenue?.toLocaleString()}</p>
+                                <p className="text-3xl font-bold text-gray-900">{analytics.totalRevenue?.toLocaleString()}</p>
                             </div>
 
                             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all">

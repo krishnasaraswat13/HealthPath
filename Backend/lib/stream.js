@@ -11,7 +11,7 @@ const apiSecret = process.env.STREAM_API_SECRET;
 
 // Validate environment variables
 if (!apiKey || !apiSecret) {
-    console.warn('âš ï¸ STREAM_API_KEY or STREAM_API_SECRET not set. Video calls will not work.');
+    console.warn('š ïâ¸ STREAM_API_KEY or STREAM_API_SECRET not set. Video calls will not work.');
 }
 
 // Chat client (also used for token generation)
