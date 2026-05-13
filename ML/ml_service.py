@@ -225,7 +225,8 @@ def model_info():
 # Entrypoint
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
-    port = int(os.getenv("ML_SERVICE_PORT", 5001))
+    # Use platform-provided PORT first (Render/Railway/Fly), then ML_SERVICE_PORT, then local default.
+    port = int(os.getenv("PORT", os.getenv("ML_SERVICE_PORT", 5001)))
     print(f"[OK] Starting HealthPath ML Service v2 on port {port}")
     app.run(host="0.0.0.0", port=port, debug=False)
 

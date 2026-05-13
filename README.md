@@ -37,7 +37,7 @@ HealthPath addresses this by offering:
 
 ---
 
-## ðŸ› ï¸ Tech Stack  
+##  Tech Stack  
 - **Frontend:** React.js, Tailwind CSS / Bootstrap  
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB  
