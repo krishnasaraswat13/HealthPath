@@ -1,13 +1,15 @@
 import axios from 'axios';
 
-// Automatically use localhost in development, production URL when deployed
+// Use localhost in dev; in production prefer explicit env vars, then same-origin fallback.
+const sameOrigin = typeof window !== 'undefined' ? window.location.origin : '';
+
 const apiBaseURL = import.meta.env.DEV 
   ? 'http://localhost:5000/api' 
-  : import.meta.env.VITE_API_URL;
+  : (import.meta.env.VITE_API_URL || `${sameOrigin}/api`);
 
 const socketURL = import.meta.env.DEV
   ? 'http://localhost:5000'
-  : import.meta.env.VITE_SOCKET_URL;
+  : (import.meta.env.VITE_SOCKET_URL || sameOrigin);
 
 export { socketURL };
 

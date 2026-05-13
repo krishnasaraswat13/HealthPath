@@ -150,7 +150,7 @@ const ReportAnalysis = () => {
         } else {
           setMlServiceStatus({ 
             success: false, 
-            message: 'ML service unavailable. Please ensure the ML service is running on port 5001.' 
+            message: err.response?.data?.message || 'ML service unavailable. Verify backend and ML deployment health.' 
           });
         }
       });
@@ -196,7 +196,7 @@ const ReportAnalysis = () => {
     } catch (err) {
       setError(
         err.response?.data?.message || 
-        'Error analyzing report. Please ensure the ML service is running.'
+        'Error analyzing report. Verify backend API and ML service configuration.'
       );
     } finally {
       setLoading(false);
@@ -641,7 +641,7 @@ const ReportAnalysis = () => {
                   <p className="text-sm opacity-80">
                     {mlServiceStatus.success && mlServiceStatus.mlService?.model_loaded
                       ? 'AI analysis engine is operational'
-                      : 'Please ensure the ML service is running'}
+                      : (mlServiceStatus.message || 'ML analysis service unavailable')}
                   </p>
                 </div>
               </div>
