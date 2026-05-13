@@ -234,7 +234,7 @@ const DoctorPharmacy = () => {
                                                     <p className="text-xs text-gray-500">{med.category || 'General'}</p>
                                                 </div>
                                                 <div className="flex items-center gap-4">
-                                                    <span className="text-sm font-bold text-green-600">â‚¹{med.price}</span>
+                                                    <span className="text-sm font-bold text-green-600"> {med.price}</span>
                                                     <span className={`text-xs px-2 py-1 rounded-lg font-medium ${med.stock > 10 ? 'bg-green-100 text-green-700' : med.stock > 0 ? 'bg-amber-100 text-amber-700' : 'bg-red-100 text-red-700'}`}>
                                                         Stock: {med.stock}
                                                     </span>

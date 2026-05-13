@@ -779,7 +779,7 @@ const HospitalDashboard = () => {
                                     </select>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Price (â‚¹)</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-2">Price ( )</label>
                                     <input
                                         type="number"
                                         value={pricingForm.price}
@@ -839,7 +839,7 @@ const HospitalDashboard = () => {
                                     </div>
                                     <div className="flex items-center gap-4 ml-4">
                                         <div className="text-right">
-                                            <div className="text-2xl font-bold text-emerald-600">â‚¹{item.price}</div>
+                                            <div className="text-2xl font-bold text-emerald-600"> {item.price}</div>
                                         </div>
                                         <button
                                             onClick={() => handleDeletePricing(item._id)}
@@ -1003,7 +1003,7 @@ const HospitalDashboard = () => {
                                                                 </div>
                                                             </div>
                                                             <div className="flex items-center gap-4">
-                                                                <span className="text-lg font-bold text-emerald-600">â‚¹{medicine.price}</span>
+                                                                <span className="text-lg font-bold text-emerald-600"> {medicine.price}</span>
                                                                 {inCart ? (
                                                                     <div className="flex items-center gap-2 bg-white rounded-lg border border-emerald-200 p-1">
                                                                         <button 
@@ -1069,10 +1069,10 @@ const HospitalDashboard = () => {
                                                     <div key={item.medicineId} className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
                                                         <div className="flex-1 min-w-0">
                                                             <p className="font-medium text-gray-900 text-sm truncate">{item.name}</p>
-                                                            <p className="text-xs text-gray-500">â‚¹{item.unitPrice} Ã— {item.quantity}</p>
+                                                            <p className="text-xs text-gray-500"> {item.unitPrice} Ã— {item.quantity}</p>
                                                         </div>
                                                         <div className="flex items-center gap-2">
-                                                            <span className="font-bold text-gray-900">â‚¹{item.unitPrice * item.quantity}</span>
+                                                            <span className="font-bold text-gray-900"> {item.unitPrice * item.quantity}</span>
                                                             <button
                                                                 onClick={() => removeFromCart(item.medicineId)}
                                                                 className="p-1.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg"
@@ -1114,7 +1114,7 @@ const HospitalDashboard = () => {
                                             <div className="border-t border-gray-200 pt-4">
                                                 <div className="flex items-center justify-between mb-4">
                                                     <span className="text-gray-600 font-medium">Total Amount</span>
-                                                    <span className="text-2xl font-bold text-gray-900">â‚¹{calculateTotal()}</span>
+                                                    <span className="text-2xl font-bold text-gray-900"> {calculateTotal()}</span>
                                                 </div>
                                                 <button
                                                     onClick={handlePlaceOrder}
@@ -1188,7 +1188,7 @@ const HospitalDashboard = () => {
                                                     <span className={`px-3 py-1 rounded-full text-xs font-bold ${getStatusColor(order.status)}`}>
                                                         {order.status}
                                                     </span>
-                                                    <span className="text-xl font-bold text-gray-900">â‚¹{order.totalAmount}</span>
+                                                    <span className="text-xl font-bold text-gray-900"> {order.totalAmount}</span>
                                                 </div>
                                             </div>
 
@@ -1532,9 +1532,9 @@ const HospitalDashboard = () => {
                                             <div key={idx} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
                                                 <div>
                                                     <p className="font-medium text-gray-900">{item.medicineId?.name || 'Medicine'}</p>
-                                                    <p className="text-sm text-gray-500">â‚¹{item.unitPrice} Ã— {item.quantity}</p>
+                                                    <p className="text-sm text-gray-500"> {item.unitPrice} Ã— {item.quantity}</p>
                                                 </div>
-                                                <p className="font-bold text-gray-900">â‚¹{item.totalPrice}</p>
+                                                <p className="font-bold text-gray-900"> {item.totalPrice}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -1551,7 +1551,7 @@ const HospitalDashboard = () => {
                                 {/* Total */}
                                 <div className="flex items-center justify-between p-4 bg-gradient-to-r from-rose-50 to-pink-50 rounded-xl border border-rose-200">
                                     <span className="text-lg font-bold text-gray-700">Total Amount</span>
-                                    <span className="text-2xl font-black text-rose-600">â‚¹{selectedOrder.totalAmount}</span>
+                                    <span className="text-2xl font-black text-rose-600"> {selectedOrder.totalAmount}</span>
                                 </div>
 
                                 {/* Timeline */}

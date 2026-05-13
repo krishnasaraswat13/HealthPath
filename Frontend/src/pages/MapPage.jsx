@@ -391,7 +391,7 @@ const MapPage = () => {
                                                     <div className="text-gray-400 text-xs mt-0.5">{item.serviceType}</div>
                                                 </div>
                                                 <div className="text-right">
-                                                    <div className="text-green-400 font-bold text-sm">â‚¹{item.price}</div>
+                                                    <div className="text-green-400 font-bold text-sm"> {item.price}</div>
                                                 </div>
                                             </div>
                                             {item.description && (

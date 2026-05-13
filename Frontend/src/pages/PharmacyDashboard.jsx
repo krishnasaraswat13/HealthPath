@@ -529,7 +529,7 @@ const PharmacyDashboard = () => {
                                                 </div>
                                             </div>
                                             <div className="text-right">
-                                                <p className="font-bold text-gray-900">â‚¹{order.price}</p>
+                                                <p className="font-bold text-gray-900">{order.price}</p>
                                                 <span className={`text-xs px-2 py-0.5 rounded-full ${
                                                     order.status === 'Pending' ? 'bg-amber-100 text-amber-700' :
                                                     order.status === 'Ready' ? 'bg-blue-100 text-blue-700' :
@@ -609,7 +609,7 @@ const PharmacyDashboard = () => {
                                         <DollarSign className="w-5 h-5 text-emerald-600" />
                                         <span className="font-medium text-emerald-700">Inventory Value</span>
                                     </div>
-                                    <p className="text-2xl font-bold text-emerald-600">â‚¹{analytics.inventory.totalValue?.toLocaleString()}</p>
+                                    <p className="text-2xl font-bold text-emerald-600"> {analytics.inventory.totalValue?.toLocaleString()}</p>
                                 </div>
                             </div>
                         </div>
@@ -696,7 +696,7 @@ const PharmacyDashboard = () => {
                                                             {medicine.stock}
                                                         </span>
                                                     </td>
-                                                    <td className="py-4 px-6 font-semibold text-gray-900">â‚¹{medicine.price?.toFixed(2)}</td>
+                                                    <td className="py-4 px-6 font-semibold text-gray-900"> {medicine.price?.toFixed(2)}</td>
                                                     <td className="py-4 px-6">
                                                         <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-sm border ${expiryStatus.color}`}>
                                                             <span className={`w-2 h-2 rounded-full ${expiryStatus.dot}`}></span>
@@ -822,7 +822,7 @@ const PharmacyDashboard = () => {
                                             <div className="flex items-center gap-6">
                                                 <div className="text-right">
                                                     <p className="text-xs text-gray-500 uppercase font-medium">Amount</p>
-                                                    <p className="text-2xl font-bold text-emerald-600">â‚¹{order.price}</p>
+                                                    <p className="text-2xl font-bold text-emerald-600"> {order.price}</p>
                                                 </div>
 
                                                 {order.status === 'Pending' && (
@@ -944,7 +944,7 @@ const PharmacyDashboard = () => {
                                                 <div className="flex items-center gap-6">
                                                     <div className="text-right">
                                                         <p className="text-xs text-gray-500 uppercase font-medium">Total Amount</p>
-                                                        <p className="text-2xl font-bold text-emerald-600">â‚¹{order.totalAmount?.toLocaleString()}</p>
+                                                        <p className="text-2xl font-bold text-emerald-600"> {order.totalAmount?.toLocaleString()}</p>
                                                     </div>
 
                                                     <div className="flex flex-col gap-2">
@@ -1162,15 +1162,15 @@ const PharmacyDashboard = () => {
                                             <tr key={idx} className="border-t border-gray-100">
                                                 <td className="py-3 px-4 font-medium text-gray-900">{item.medicineName}</td>
                                                 <td className="py-3 px-4 text-center text-gray-600">{item.quantity}</td>
-                                                <td className="py-3 px-4 text-right text-gray-600">â‚¹{item.unitPrice}</td>
-                                                <td className="py-3 px-4 text-right font-semibold text-gray-900">â‚¹{item.totalPrice}</td>
+                                                <td className="py-3 px-4 text-right text-gray-600"> {item.unitPrice}</td>
+                                                <td className="py-3 px-4 text-right font-semibold text-gray-900"> {item.totalPrice}</td>
                                             </tr>
                                         ))}
                                     </tbody>
                                     <tfoot className="bg-gray-50 border-t-2 border-gray-200">
                                         <tr>
                                             <td colSpan="3" className="py-3 px-4 text-right font-bold text-gray-700">Grand Total:</td>
-                                            <td className="py-3 px-4 text-right font-bold text-emerald-600 text-lg">â‚¹{selectedBulkOrder.totalAmount?.toLocaleString()}</td>
+                                            <td className="py-3 px-4 text-right font-bold text-emerald-600 text-lg"> {selectedBulkOrder.totalAmount?.toLocaleString()}</td>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -1289,7 +1289,7 @@ const PharmacyDashboard = () => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Price (â‚¹) *</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">Price ( ) *</label>
                                     <input
                                         type="number"
                                         step="0.01"
